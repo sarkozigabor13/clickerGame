@@ -1,0 +1,985 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+}
+
+h1 {
+  color: white;
+  margin-bottom: 0;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+  color: #bfbfbf;
+}
+
+button, a {
+  border: none;
+  color: #000000;
+  font-size: 1rem;
+  border-radius: 0;
+  background: #BFBFBF;
+  box-shadow: inset -1px -1px 0px #000000, inset 1px 1px 0px #ffffff, inset -2px -2px 0px #808080, inset 2px 2px 0px #dbdbdb;
+  min-width: 200px;
+  font-size: 22px;
+  height: 40px;
+  cursor: url("/assets/img/cursor_hover.svg"), auto !important;
+}
+
+button:focus, a:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+button:active, a:active {
+  background-color: #BFBFBF;
+  box-shadow: inset -1px -1px 0px #000000, inset 1px 1px 0px #ffffff, inset -2px -2px 0px #808080, inset 2px 2px 0px #dbdbdb;
+  border: none;
+  transform: scale(1.05);
+}
+
+button:disabled, a:disabled {
+  opacity: 0.15;
+  cursor: url("/assets/img/cursor.svg"), auto !important;
+}
+
+button:hover, a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+button.button-xl, a.button-xl {
+  min-width: 200px;
+  height: 50px;
+  margin-bottom: 3rem;
+  font-size: 24px;
+}
+
+@media (min-width: 576px) {
+  button.button-xl, a.button-xl {
+    min-width: 270px;
+  }
+}
+
+button.button-img, a.button-img {
+  background: none;
+  box-shadow: none;
+  min-width: auto;
+}
+
+button.btn-settings, a.btn-settings {
+  min-width: 2rem;
+  height: auto;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+button.btn-settings span, a.btn-settings span {
+  display: block;
+  width: 90%;
+  height: 3px;
+  background-color: black;
+  margin: 4px auto;
+}
+
+body.body-menu {
+  width: 100%;
+  height: 100%;
+}
+
+body.body-menu.bg-menu {
+  background-image: linear-gradient(#09090999, #000000bd), url("/assets/img/background/landing.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+  background-size: cover;
+}
+
+body.body-menu.bg-menu-tutorial {
+  background-image: linear-gradient(#09090999, #000000bd), url("/assets/img/background/tutorial.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+  background-size: cover;
+}
+
+body.body-menu.bg-menu-developer {
+  background-image: linear-gradient(#09090999, #000000bd), url("/assets/img/background/developer.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+  background-size: cover;
+}
+
+body.body-menu.bg-menu-load {
+  background-image: linear-gradient(#09090999, #000000bd), url("/assets/img/background/load.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+  background-size: cover;
+}
+
+body.body-menu.bg-game {
+  background-image: linear-gradient(#09090999, #000000bd), url("/assets/img/background/game.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: black;
+  background-size: cover;
+}
+
+body.body-menu .drop {
+  position: fixed;
+  z-index: -1;
+}
+
+body.body-menu .layer1 {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(238, 238, 238, 0.699);
+  animation: rain-animation 2s infinite linear;
+}
+
+body.body-menu .layer2 {
+  width: 4px;
+  height: 4px;
+  background-color: rgba(204, 204, 204, 0.747);
+  animation: rain-animation 1.75s infinite linear;
+}
+
+body.body-menu .layer3 {
+  width: 2px;
+  height: 2px;
+  background-color: rgba(170, 170, 170, 0.678);
+  animation: rain-animation 1.5s infinite linear;
+}
+
+body.body-menu .section-menu .row {
+  align-items: center;
+  height: 100vh;
+}
+
+body.body-menu .section-menu img {
+  max-width: 124px;
+}
+
+@media (min-width: 576px) {
+  body.body-menu .section-menu img {
+    max-width: 160px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.body-menu .section-menu img {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  body.body-menu .section-menu img {
+    max-width: 270px;
+  }
+}
+
+body.body-menu .section-menu .card {
+  display: none;
+  z-index: 1;
+  padding: 2.5rem 1rem;
+  border-radius: 0;
+  background-color: #252525;
+  border: 1px solid #bfbfbf;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+body.body-menu .section-menu .card.active {
+  display: block;
+}
+
+body.body-menu .section-menu .card.active.animation {
+  opacity: 1;
+}
+
+@media (min-width: 576px) {
+  body.body-menu .section-menu .card {
+    padding: 5rem 5rem;
+  }
+}
+
+body.body-menu .section-menu .card .card-body {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  flex-direction: column;
+}
+
+body.body-menu .section-menu .card .card-body h3 {
+  margin-bottom: 1.5rem;
+}
+
+body.body-menu .section-menu .card .card-body p {
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 44px;
+  margin-top: 2.5rem;
+  margin-bottom: 5.5rem;
+}
+
+body.body-menu .section-menu .card .card-body button.button-xl {
+  margin-top: 3rem;
+}
+
+body.body-menu .section-menu .card .card-body button.button-xl + button {
+  margin-bottom: 1.5rem;
+}
+
+body.body-menu .section-menu .card .card-body .form-group {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  body.body-menu .section-menu .card .card-body .form-group {
+    display: flex;
+  }
+}
+
+body.body-menu .section-menu .card .card-body .form-group div {
+  padding: 0;
+}
+
+@media (max-width: 575.9px) {
+  body.body-menu .section-menu .card .card-body .form-group div {
+    margin: auto;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) {
+  body.body-menu .section-menu .card .card-body .form-group div {
+    padding: 0 15px;
+  }
+}
+
+body.body-menu .section-menu .card .card-body label {
+  font-size: 24px;
+  color: #FFFFFF;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  body.body-menu .section-menu .card .card-body label {
+    margin-bottom: 0rem;
+  }
+}
+
+body.body-menu .section-menu .card .card-body input {
+  border: 2px dashed #BFBFBF;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 24px;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+
+body.body-menu .section-menu .card .card-body input:focus {
+  box-shadow: none;
+}
+
+@media (min-width: 768px) {
+  body.body-menu .section-menu .card .card-body input {
+    margin-bottom: 0rem;
+  }
+}
+
+body.body-menu .section-menu .card .card-body .form-check-input {
+  position: absolute;
+  visibility: hidden;
+}
+
+body.body-menu .section-menu .card .card-body input[type=radio] + label > img {
+  transition: transform 500ms all;
+}
+
+body.body-menu .section-menu .card .card-body input[type=radio]:checked + label > img {
+  transform: scale(1.05);
+  outline: 2px dashed #BFBFBF;
+}
+
+body.body-menu .section-menu .card .card-body .character-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 0rem;
+}
+
+@media (max-width: 575.9px) {
+  body.body-menu .section-menu .card .card-body .character-row {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  body.body-menu .section-menu .card .card-body .character-row {
+    margin-bottom: 1.5rem;
+  }
+}
+
+body.body-menu .section-menu .card .card-body .loading-text {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+body.body-menu .section-menu .card .card-body .loading-text p {
+  margin-bottom: 3rem;
+}
+
+body.body-menu .section-menu .card .card-body .loading-text p span {
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid #FFFFFF;
+  /* The typwriter cursor */
+  animation: blink-caret 1s step-end infinite;
+}
+
+@media (max-width: 575.9px) {
+  body.body-menu .section-menu .card .card-body .loading-text p {
+    height: auto;
+    min-height: 360px;
+  }
+}
+
+@media (min-width: 576px) {
+  body.body-menu .section-menu .card .card-body .loading-text p {
+    height: 455px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.body-menu .section-menu .card .card-body .loading-text p {
+    height: 360px;
+  }
+}
+
+main.animation {
+  animation: bg-animation 0.75s 1 ease-out;
+}
+
+.progress {
+  width: 100%;
+  height: 2rem;
+  font-size: 24px;
+}
+
+.progress .progress-bar {
+  background-color: #BFBFBF;
+}
+
+.danger {
+  outline: 2px solid red !important;
+  animation: shake 0.75s 1 ease-out;
+}
+
+@keyframes bg-animation {
+  from {
+    background: #000000;
+  }
+  to {
+    background: #00000000;
+  }
+}
+
+@keyframes rain-animation {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #FFFFFF;
+  }
+}
+
+body .section-game {
+  margin-top: 5rem;
+}
+
+body .section-game img {
+  max-width: 124px;
+}
+
+@media (min-width: 576px) {
+  body .section-game img {
+    max-width: 160px;
+  }
+}
+
+@media (min-width: 768px) {
+  body .section-game img {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  body .section-game img {
+    max-width: 270px;
+  }
+}
+
+body .section-game .card {
+  display: none;
+  z-index: 1;
+  padding: 2.5rem 1rem;
+  border-radius: 0;
+  background-color: #252525;
+  border: 1px solid #bfbfbf;
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+body .section-game .card.active {
+  display: block;
+}
+
+body .section-game .card.active.animation {
+  opacity: 1;
+}
+
+@media (min-width: 576px) {
+  body .section-game .card {
+    padding: 5rem 5rem;
+  }
+}
+
+body .section-game .card .card-body {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  flex-direction: column;
+}
+
+body .section-game .card .card-body h3 {
+  margin-bottom: 1.5rem;
+}
+
+body .section-game .card .card-body p {
+  color: #FFFFFF;
+  font-size: 24px;
+  line-height: 44px;
+  margin-top: 2.5rem;
+  margin-bottom: 5.5rem;
+}
+
+body .section-game .card .card-body button.button-xl {
+  margin-top: 3rem;
+}
+
+body .section-game .card .card-body button.button-xl + button {
+  margin-bottom: 1.5rem;
+}
+
+body .section-game .card .card-body a.button-statistics {
+  padding: 0.5rem 1rem;
+}
+
+body .section-game .card .card-body a.button-statistics.active {
+  box-shadow: none;
+}
+
+body .section-game .card .card-body .card-card {
+  background-color: #BFBFBF;
+  text-align: center;
+  padding: 2rem;
+  height: 100%;
+}
+
+body .section-game .card .card-body .card-card-player-info,
+body .section-game .card .card-body .card-card-year-info,
+body .section-game .card .card-body .card-card-statistics {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+body .section-game .card .card-body .card-card-player-info p,
+body .section-game .card .card-body .card-card-year-info p,
+body .section-game .card .card-body .card-card-statistics p {
+  color: black;
+  margin: 0;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+body .section-game .card .card-body .card-card-statistics {
+  margin-top: 0;
+}
+
+body .section-game .card .card-body .card-card-collapse {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+body .section-game .card .card-body .loading-text {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+body .section-game .card .card-body .loading-text p {
+  margin-bottom: 3rem;
+}
+
+body .section-game .card .card-body .loading-text p span {
+  overflow: hidden;
+  border-right: 0.15em solid #FFFFFF;
+  animation: blink-caret 1s step-end infinite;
+}
+
+@media (max-width: 575.9px) {
+  body .section-game .card .card-body .loading-text p {
+    height: auto;
+    min-height: 360px;
+  }
+}
+
+@media (min-width: 576px) {
+  body .section-game .card .card-body .loading-text p {
+    height: 455px;
+  }
+}
+
+@media (min-width: 768px) {
+  body .section-game .card .card-body .loading-text p {
+    height: 360px;
+  }
+}
+
+body #main-categories {
+  margin-top: 5rem;
+}
+
+body #main-categories .card-category {
+  z-index: 1;
+  padding: 2rem;
+  border-radius: 0;
+  background-color: #252525;
+  border: 1px solid #bfbfbf;
+  transition: opacity 300ms;
+  text-align: center;
+  min-height: 435px;
+}
+
+body #main-categories .card-category h5 {
+  color: #FFFFFF;
+  font-size: 54px;
+  margin-bottom: 1rem;
+}
+
+body #main-categories .card-category .card-category-income {
+  color: #FFFFFF;
+  font-size: 38px;
+  margin: 1rem 0;
+}
+
+body #main-categories .card-category .card-category-sub {
+  color: #BFBFBF;
+  font-size: 24px;
+}
+
+body #main-categories .card-category .card-category-sub + .card-category-sub {
+  margin-top: 1rem;
+}
+
+body #main-categories .card-category-item {
+  z-index: 1;
+  padding: 2rem;
+  border-radius: 0;
+  background-color: #252525;
+  border: 1px solid #bfbfbf;
+  transition: opacity 300ms;
+  text-align: center;
+}
+
+body #main-categories .card-category-item h6 {
+  color: #FFFFFF;
+  font-size: 36px;
+}
+
+body #main-categories .card-category-item .card-category-item-sub {
+  color: #BFBFBF;
+  font-size: 24px;
+  margin: 1rem 0;
+}
+
+body #main-categories .card-category-item + .card-category-item {
+  margin-top: 2rem;
+}
+
+body.modal-open {
+  overflow: auto;
+  padding-right: 0 !important;
+}
+
+body .modal {
+  padding-right: 0 !important;
+}
+
+body .modal .modal-content {
+  border: 0;
+  border-radius: 0;
+}
+
+body .modal .card {
+  padding: 2.5rem 1rem;
+  border-radius: 0;
+  background-color: #252525;
+  border: 1px solid #bfbfbf;
+}
+
+@media (min-width: 576px) {
+  body .modal .card {
+    padding: 5rem 5rem;
+  }
+}
+
+body .modal .card .card-body {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  flex-direction: column;
+}
+
+body .modal .card .card-body h3 {
+  margin-bottom: 2.5rem;
+}
+
+body .modal .card .card-body button {
+  margin-bottom: 1.5rem;
+}
+
+.progress {
+  width: 100%;
+  height: 2rem;
+  font-size: 24px;
+}
+
+.progress .progress-bar {
+  width: 0%;
+  background: url(/assets/img/season-bar.png) no-repeat;
+  filter: grayscale(1);
+}
+
+.click-animation {
+  position: absolute;
+  font-size: 38px;
+  color: #FFFFFF;
+  width: fit-content;
+  z-index: 1;
+  text-align: center;
+  transform: scale(0);
+}
+
+.click-animation.active {
+  animation: animation-move 1s ease-in-out 0s 1 forwards;
+}
+
+@keyframes animation-move {
+  0% {
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    transform: scale(1);
+    opacity: .5;
+  }
+  100% {
+    top: 0;
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+::selection {
+  background: inherit;
+  color: inherit;
+}
+
+html, body {
+  cursor: url("/assets/img/cursor.svg"), auto;
+}
+
+nav {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+img {
+  filter: saturate(0);
+}
+
+.details-row {
+  padding-top: 5rem;
+}
+
+.details-row .card .card-text {
+  margin-bottom: 0;
+}
+
+.details-row #progress-bar {
+  width: 100%;
+  background-color: #00000020;
+}
+
+.details-row #progress-bar-date {
+  width: 0%;
+  height: 30px;
+  background: url(/assets/img/season-bar.png) no-repeat;
+  background-color: #007bff;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+.character-row {
+  margin-top: 3rem;
+}
+
+.character-row .card {
+  width: 360px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-row .card .card-text {
+  margin-bottom: 0;
+}
+
+.character-row .card img {
+  width: 128px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.category-row {
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 5rem 0;
+  position: relative;
+}
+
+.category-row .category-click-info {
+  position: absolute;
+  top: 50px;
+  left: 110px;
+  color: #FFFFFF;
+  width: fit-content;
+  padding: 10px;
+  z-index: 1;
+  text-align: center;
+  transform: scale(0);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+.category-row .category-click-info.active {
+  animation: info-animation 1s ease-in-out 0s 1 forwards;
+}
+
+.category-row .category {
+  max-width: 168px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.category-row .category:hover {
+  transform: scale(1.1);
+}
+
+.category-row .category.category-clicked {
+  transform: scale(1);
+}
+
+.category-row .card {
+  margin-top: 3rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  font-weight: bold;
+  border-radius: 0;
+}
+
+.category-row .card .card-text {
+  text-align: left;
+}
+
+.category-row .card .card-body {
+  text-align: left;
+}
+
+.category-row .card .card-body .card-item + .card-item {
+  margin-top: 3rem;
+}
+
+.category-row .card .card-body .card-item .card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-row .card .card-body .card-item .card-description ul {
+  padding-left: 20px;
+}
+
+.category-row .card .card-body .card-item .card-item-animation img {
+  position: absolute;
+  width: 64px;
+  right: 0px;
+  top: 0px;
+  animation: fire-animation 1s ease-in-out 0s 1 forwards;
+  z-index: 1;
+}
+
+.category-media .category-click-info {
+  background-color: #EE6C4D;
+}
+
+.category-media .card button {
+  font-weight: bold;
+}
+
+@keyframes fire-animation {
+  0% {
+    right: 0px;
+    top: 0px;
+  }
+  25% {
+    right: -110px;
+    top: 0px;
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    right: -110px;
+    transform: scale(1);
+    opacity: 1;
+  }
+  75% {
+    right: -110px;
+    transform: scale(1);
+    opacity: .5;
+  }
+  100% {
+    right: -110px;
+    top: -300px;
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

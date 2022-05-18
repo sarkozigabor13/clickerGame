@@ -1,0 +1,192 @@
+// Import 
+@import 'abstracts/mixins';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'components/buttons';
+
+@import 'pages/menu';
+@import 'pages/game';
+
+@import 'themes/theme';
+
+
+// Basic style
+::selection {
+  background: inherit;
+  color: inherit;
+}
+
+html, body {
+  cursor: url('/assets/img/cursor.svg'), auto;	
+}
+
+nav {
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+img {
+  filter: saturate(0);
+}
+
+// Details info box style
+.details-row {
+  padding-top: 5rem;
+
+  .card {
+    .card-text{
+      margin-bottom: 0;
+    }
+  }
+
+  #progress-bar {
+    width: 100%;
+    background-color: #00000020;
+  }
+  
+  #progress-bar-date {
+    width: 0%;
+    height: 30px;
+    background: url(/assets/img/season-bar.png) no-repeat;
+    background-color: #007bff;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+  }
+}
+
+// Character row style
+.character-row {
+
+  margin-top: 3rem;
+
+  .card {
+    width: 360px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card-text{
+      margin-bottom: 0;
+    }
+    img {
+      width: 128px;
+      margin: 0 auto;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+// Category row style
+.category-row {
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 5rem 0;
+  position: relative;
+
+
+  .category-click-info {
+    position: absolute;
+    top: 50px;
+    left: 110px;
+    color: $base-white;
+    width: fit-content;
+    padding: 10px;
+    z-index: 1;
+    text-align: center;
+    transform: scale(0);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+    &.active {
+      animation: info-animation 1s ease-in-out 0s 1 forwards;
+    }
+  }
+
+  .category {
+    max-width: 168px;
+    margin: 0 auto;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &.category-clicked {
+      transform: scale(1);
+    }
+  }
+
+  .card {
+    margin-top: 3rem;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    font-weight: bold;
+    border-radius: 0;
+
+    .card-text {
+      text-align: left;
+    }
+
+    .card-body {
+      text-align: left;
+
+
+      .card-item {
+
+        & + .card-item {
+          margin-top: 3rem;
+        }
+
+        .card-title {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .card-description ul {
+          padding-left: 20px;
+        }
+
+        .card-item-animation {
+          img {
+            position: absolute;
+            width: 64px;
+            right: 0px;
+            top: 0px;
+            animation: fire-animation 1s ease-in-out 0s 1 forwards;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Each category
+
+// Media 
+.category-media {
+
+  .category-click-info {
+    background-color: $base-media-color;
+  }
+
+  .card {
+    button {
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+// Animations 
+
+@keyframes fire-animation {
+  0%   { right:0px; top:0px;}
+  25%  { right:-110px; top:0px; transform: scale(1); opacity: 1;}
+  50%  { right:-110px; transform: scale(1); opacity: 1;}
+  75%  { right:-110px; transform: scale(1); opacity: .5;}
+  100% { right:-110px; top:-300px; transform: scale(1); opacity: 0;}
+}

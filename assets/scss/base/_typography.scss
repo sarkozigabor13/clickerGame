@@ -1,0 +1,23 @@
+// Import 
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import '../abstracts/mixins';
+
+body {
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+  }
+
+  h1 {
+    color: white;
+    margin-bottom: 0;
+    font-size: 2.5rem; 
+
+    @include for-tablet-landscape-up {    
+      font-size: 3.75rem;
+   }
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: #bfbfbf;
+  }

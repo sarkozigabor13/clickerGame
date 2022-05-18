@@ -1,0 +1,298 @@
+@import '../abstracts/mixins';
+@import '../themes/theme';
+
+
+body {
+
+  &.body-menu {
+    width: 100%;
+    height: 100%;
+
+    &.bg-menu {
+      @include background-image(url("/assets/img/background/landing.jpg"));
+    }
+
+    &.bg-menu-tutorial {
+      @include background-image(url("/assets/img/background/tutorial.jpg"));
+    }
+
+    &.bg-menu-developer {
+      @include background-image(url("/assets/img/background/developer.jpg"));
+    }
+
+    &.bg-menu-load {
+      @include background-image(url("/assets/img/background/load.jpg"));
+    }
+
+    &.bg-game {
+      @include background-image(url("/assets/img/background/game.jpg"));
+    }
+    
+
+    .drop {
+        position: fixed;
+        z-index: -1;
+      }
+      
+      .layer1 {
+        width: 6px;
+        height: 6px;
+        background-color: rgba(238, 238, 238, 0.699);
+        animation: rain-animation 2s infinite linear;
+      }
+      
+      .layer2 {
+        width: 4px;
+        height: 4px;
+        background-color: rgba(204, 204, 204, 0.747);
+        animation: rain-animation 1.75s infinite linear;
+      }
+      
+      .layer3 {
+        width: 2px;
+        height: 2px;
+        background-color: rgba(170, 170, 170, 0.678);
+        animation: rain-animation 1.5s infinite linear;
+      }
+
+      .section-menu {
+          .row {
+              align-items: center;
+              height: 100vh;
+          }
+        img {
+            max-width: 124px;
+    
+             @include for-tablet-portrait-up{    
+                max-width: 160px;
+             }
+              @include for-tablet-landscape-up {    
+                max-width: 200px;
+             }
+              @include for-desktop-up {    
+                max-width: 270px;
+             }
+          }
+          .card {
+            display: none;  
+            z-index: 1;
+            padding: 2.5rem 1rem;    
+            border-radius: 0;
+            background-color: #252525;
+            border: 1px solid #bfbfbf;
+            opacity: 0;
+            transition: opacity 300ms;
+
+            &.active {
+                display: block;
+
+                &.animation {
+                    opacity: 1;
+                }
+            }
+
+              @include for-tablet-portrait-up {    
+                padding: 5rem 5rem;
+             }
+            
+            .card-body {
+                display: flex;
+                padding: 0;
+                align-items: center;
+                flex-direction: column;
+
+                h3 {
+                    margin-bottom: 1.5rem;
+                }
+
+                p {
+                    color: $base-white;
+                    font-size: 24px;
+                    line-height: 44px;
+                    margin-top: 2.5rem;
+                    margin-bottom: 5.5rem
+                }
+
+                button.button-xl{
+                    margin-top: 3rem;
+
+                    & + button {
+                        margin-bottom: 1.5rem;
+                    }
+                }
+                
+                .form-group {
+                  width: 100%;
+
+                  @include for-tablet-landscape-up {    
+                    display: flex;
+                 }
+
+                 div {
+                   padding: 0;
+
+                    @include for-phone-only {    
+                      margin: auto;
+                      width: 100%;
+                      justify-content: center;
+                  }
+
+                    @include for-tablet-landscape-up {    
+                      padding: 0 15px;
+                  }
+                 }
+
+                }
+
+                label {
+                  font-size: 24px;
+                  color: $base-white;
+                  padding: 0;
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 1rem;
+
+                    @include for-tablet-landscape-up {    
+                      margin-bottom: 0rem;
+                  }
+                }
+
+                input {
+                  border: 2px dashed $base-button-color;
+                  border-radius: 0;
+                  background-color: transparent;
+                  font-size: 24px;
+                  color: $base-white;
+                  margin-bottom: 1rem;
+
+                  &:focus {
+                    box-shadow: none;
+                  }
+
+                    @include for-tablet-landscape-up {    
+                      margin-bottom: 0rem;
+                  }
+                }
+
+                .form-check-input {
+                    position: absolute;
+                    visibility: hidden;
+                }
+
+                input[type=radio] + label>img {
+                  transition: transform 500ms all;
+                }
+                
+                input[type=radio]:checked + label>img {
+                  transform: scale(1.05);
+                  outline: 2px dashed $base-button-color;
+                }
+
+                .character-row {
+                  display: flex;
+                  justify-content: space-evenly;
+                  align-items: center;
+                  margin-top: 0rem;
+
+                      @include for-phone-only {    
+                        display: block;
+                    }
+
+                      @include for-tablet-landscape-up {    
+                        margin-bottom: 1.5rem;
+                    }
+                }
+
+                .loading-text {
+                  display: flex; 
+                  justify-content: flex-start; 
+                  width: 100%;
+
+                  p {
+                    margin-bottom: 3rem;
+
+                    span {
+                      overflow: hidden; /* Ensures the content is not revealed until the animation */
+                      border-right: .15em solid $base-white; /* The typwriter cursor */
+                      animation:  blink-caret 1s step-end infinite;
+                    }
+
+                      @include for-phone-only {    
+                        height: auto;
+                        min-height: 360px;
+                      }
+
+                      @include for-tablet-portrait-up {    
+                        height: 455px;
+                      }
+
+                      @include for-tablet-landscape-up {    
+                        height: 360px;
+                      }
+                  }
+                }
+            }
+          }
+      }
+  }
+}
+
+// Main
+
+main {
+  &.animation {
+    animation: bg-animation 0.75s 1 ease-out;
+  }
+}
+
+// Progress
+
+.progress {
+  width: 100%;
+  height: 2rem;
+  font-size: 24px;
+
+  .progress-bar {
+    background-color: $base-button-color;
+  }
+}
+
+
+// Warning 
+
+.danger {
+  outline: 2px solid rgb(255, 0, 0) !important;
+  animation: shake 0.75s 1 ease-out;
+}
+
+// Animations
+
+@keyframes bg-animation {
+  from {background: #000000;}
+  to {background: #00000000;}
+}
+
+@keyframes rain-animation {
+    from {top: 0;}
+    to {top: 100%;}
+  }
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: $base-white }
+}
