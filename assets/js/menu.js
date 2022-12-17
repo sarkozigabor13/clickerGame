@@ -43,7 +43,7 @@ const CharacterRow = document.querySelector(".character-row")
 
 
 // Game UI mode on
-let GameTesterMode = true;
+let GameTesterMode = false;
 
 
 const Init = () => {
